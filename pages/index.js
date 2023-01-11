@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
 import Header from "../components/Header/Header";
@@ -23,10 +23,124 @@ export default function Home({ exploreData }) {
 				<section className="pt-6">
 					<h2 className="text-4xl font-semibold pb-5">Explore Nearby</h2>
 				</section>
+
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-					{exploreData.map((item) => {
-						<SmallCard item={item} key={item.img} />;
-					})}
+					{/* {exploreData.map((item) => {
+						<SmallCard items={item} key={item.img} />;
+					})} */}
+
+					<div className="flex items-center m-2 space-x-4 mt-5 rounded-xl cursor-pointer hover:bg-gray-100 hover:scale-105 transition transform duration-200 ease-out">
+						<div className="relative h-16 w-16">
+							<Image
+								alt="explore"
+								src="https://links.papareact.com/41m"
+								layout="fill"
+								className="rounded-lg"
+							/>
+						</div>
+						<div>
+							<h2>Hove</h2>
+							<h3 className="text-gray-500">2-hour drive</h3>
+						</div>
+					</div>
+					<div className="flex items-center m-2 space-x-4 mt-5 rounded-xl cursor-pointer hover:bg-gray-100 hover:scale-105 transition transform duration-200 ease-out">
+						<div className="relative h-16 w-16">
+							<Image
+								alt="explore"
+								src="https://links.papareact.com/41m"
+								layout="fill"
+								className="rounded-lg"
+							/>
+						</div>
+						<div>
+							<h2>Hove</h2>
+							<h3 className="text-gray-500">2-hour drive</h3>
+						</div>
+					</div>
+					<div className="flex items-center m-2 space-x-4 mt-5 rounded-xl cursor-pointer hover:bg-gray-100 hover:scale-105 transition transform duration-200 ease-out">
+						<div className="relative h-16 w-16">
+							<Image
+								alt="explore"
+								src="https://links.papareact.com/41m"
+								layout="fill"
+								className="rounded-lg"
+							/>
+						</div>
+						<div>
+							<h2>Hove</h2>
+							<h3 className="text-gray-500">2-hour drive</h3>
+						</div>
+					</div>
+					<div className="flex items-center m-2 space-x-4 mt-5 rounded-xl cursor-pointer hover:bg-gray-100 hover:scale-105 transition transform duration-200 ease-out">
+						<div className="relative h-16 w-16">
+							<Image
+								alt="explore"
+								src="https://links.papareact.com/41m"
+								layout="fill"
+								className="rounded-lg"
+							/>
+						</div>
+						<div>
+							<h2>Hove</h2>
+							<h3 className="text-gray-500">2-hour drive</h3>
+						</div>
+					</div>
+					<div className="flex items-center m-2 space-x-4 mt-5 rounded-xl cursor-pointer hover:bg-gray-100 hover:scale-105 transition transform duration-200 ease-out">
+						<div className="relative h-16 w-16">
+							<Image
+								alt="explore"
+								src="https://links.papareact.com/41m"
+								layout="fill"
+								className="rounded-lg"
+							/>
+						</div>
+						<div>
+							<h2>Hove</h2>
+							<h3 className="text-gray-500">2-hour drive</h3>
+						</div>
+					</div>
+					<div className="flex items-center m-2 space-x-4 mt-5 rounded-xl cursor-pointer hover:bg-gray-100 hover:scale-105 transition transform duration-200 ease-out">
+						<div className="relative h-16 w-16">
+							<Image
+								alt="explore"
+								src="https://links.papareact.com/41m"
+								layout="fill"
+								className="rounded-lg"
+							/>
+						</div>
+						<div>
+							<h2>Hove</h2>
+							<h3 className="text-gray-500">2-hour drive</h3>
+						</div>
+					</div>
+					<div className="flex items-center m-2 space-x-4 mt-5 rounded-xl cursor-pointer hover:bg-gray-100 hover:scale-105 transition transform duration-200 ease-out">
+						<div className="relative h-16 w-16">
+							<Image
+								alt="explore"
+								src="https://links.papareact.com/41m"
+								layout="fill"
+								className="rounded-lg"
+							/>
+						</div>
+						<div>
+							<h2>Hove</h2>
+							<h3 className="text-gray-500">2-hour drive</h3>
+						</div>
+					</div>
+					<div className="flex items-center m-2 space-x-4 mt-5 rounded-xl cursor-pointer hover:bg-gray-100 hover:scale-105 transition transform duration-200 ease-out">
+						<div className="relative h-16 w-16">
+							<Image
+								alt="explore"
+								src="https://links.papareact.com/41m"
+								layout="fill"
+								className="rounded-lg"
+							/>
+						</div>
+						<div>
+							<h2>Hove</h2>
+							<h3 className="text-gray-500">2-hour drive</h3>
+						</div>
+					</div>
 				</div>
 			</main>
 		</>
@@ -34,8 +148,9 @@ export default function Home({ exploreData }) {
 }
 
 export async function getStaticProps() {
-	const res = await fetch("http://links.papareact.com/pyp");
+	const res = await fetch("https://www.jsonkeeper.com/b/4G1G");
 	const exploreData = await res.json();
+
 	return {
 		props: {
 			exploreData,
